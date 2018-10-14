@@ -1,3 +1,9 @@
 import React from "react";
 
-export default () => <header>Header</header>;
+import ClientsCounter from "../ClientsCount";
+
+export default () => (
+  <header>
+    <ClientsCounter n={4} />
+  </header>
+);
