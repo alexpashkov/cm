@@ -2,6 +2,7 @@ import { createEpicMiddleware } from "redux-observable";
 import { compose, createStore, applyMiddleware } from "redux";
 import rootReducer from "./rootReducer";
 import rootEpic from "./rootEpic";
+import * as pollActions from "../state/poll/actions";
 
 const epicMiddleware = createEpicMiddleware();
 
@@ -13,5 +14,7 @@ const store = createStore(
 );
 
 epicMiddleware.run(rootEpic);
+
+store.dispatch(pollActions.start());
 
 export default store;

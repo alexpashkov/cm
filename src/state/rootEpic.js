@@ -1,4 +1,5 @@
 import { combineEpics } from "redux-observable";
+import { pollStart } from "./poll/epics";
 import clientsFetch from "./clients/fetchEpic";
 
-export default combineEpics(clientsFetch);
+export default combineEpics(pollStart, clientsFetch);
